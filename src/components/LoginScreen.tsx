@@ -61,7 +61,21 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
         body: JSON.stringify(body),
       });
 
-      const data = await response.json();
+      let data: any = {};
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        const textText = await response.text();
+        if (!response.ok) {
+          throw new Error(`Server endpoint unavailable (${response.status}). Please check server connection.`);
+        }
+        try {
+          data = JSON.parse(textText);
+        } catch {
+          throw new Error('Server returned an unexpected response format.');
+        }
+      }
 
       if (!response.ok) {
         throw new Error(data.message || 'An error occurred. Please try again.');
@@ -104,7 +118,21 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
         body: JSON.stringify({ email: resetEmail })
       });
 
-      const data = await response.json();
+      let data: any = {};
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        const textText = await response.text();
+        if (!response.ok) {
+          throw new Error(`Server endpoint unavailable (${response.status}). Please check server connection.`);
+        }
+        try {
+          data = JSON.parse(textText);
+        } catch {
+          throw new Error('Server returned an unexpected response format.');
+        }
+      }
 
       if (!response.ok) {
         throw new Error(data.message || 'Failed to request password reset code.');
@@ -152,7 +180,21 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
         })
       });
 
-      const data = await response.json();
+      let data: any = {};
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        const textText = await response.text();
+        if (!response.ok) {
+          throw new Error(`Server endpoint unavailable (${response.status}). Please check server connection.`);
+        }
+        try {
+          data = JSON.parse(textText);
+        } catch {
+          throw new Error('Server returned an unexpected response format.');
+        }
+      }
 
       if (!response.ok) {
         throw new Error(data.message || 'Failed to reset password.');
