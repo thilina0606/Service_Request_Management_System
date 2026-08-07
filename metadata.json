@@ -1,0 +1,6 @@
+{
+  "name": "Service Request Management System",
+  "description": "A secure and efficient service request management system for submitting, tracking, and managing maintenance and production service requests with automated email notifications, activity logs, and role-based access control.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,105 @@
+{
+  "entities": {
+    "users": {
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "requests": {
+      "fields": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "department": { "type": "string" },
+        "description": { "type": "string" },
+        "priority": { "type": "string" },
+        "status": { "type": "string" },
+        "created_by": { "type": "string" },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" }
+      }
+    },
+    "activity_logs": {
+      "fields": {
+        "id": { "type": "string" },
+        "request_id": { "type": "string" },
+        "action": { "type": "string" },
+        "description": { "type": "string" },
+        "performed_by": { "type": "string" },
+        "role": { "type": "string" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "notifications": {
+      "fields": {
+        "id": { "type": "string" },
+        "user_id": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "read": { "type": "boolean" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "materials": {
+      "fields": {
+        "id": { "type": "string" },
+        "material_id": { "type": "string" },
+        "material_name": { "type": "string" },
+        "unit": { "type": "string" },
+        "current_stock": { "type": "number" }
+      }
+    },
+    "tools": {
+      "fields": {
+        "id": { "type": "string" },
+        "tool_id": { "type": "string" },
+        "tool_name": { "type": "string" },
+        "available_quantity": { "type": "number" }
+      }
+    },
+    "request_materials": {
+      "fields": {
+        "id": { "type": "string" },
+        "request_id": { "type": "string" },
+        "material_id": { "type": "string" },
+        "quantity": { "type": "number" },
+        "assigned_by": { "type": "string" }
+      }
+    },
+    "request_tools": {
+      "fields": {
+        "id": { "type": "string" },
+        "request_id": { "type": "string" },
+        "tool_id": { "type": "string" },
+        "quantity": { "type": "number" },
+        "assigned_by": { "type": "string" }
+      }
+    },
+    "inventory_transactions": {
+      "fields": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "item_type": { "type": "string" },
+        "item_id": { "type": "string" },
+        "item_name": { "type": "string" },
+        "quantity": { "type": "number" },
+        "performed_by": { "type": "string" },
+        "reason": { "type": "string" },
+        "created_at": { "type": "string" }
+      }
+    },
+    "email_logs": {
+      "fields": {
+        "id": { "type": "string" },
+        "to": { "type": "string" },
+        "subject": { "type": "string" },
+        "status": { "type": "string" },
+        "created_at": { "type": "string" }
+      }
+    }
+  }
+}
